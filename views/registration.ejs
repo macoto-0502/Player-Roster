@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>チーム登録</title>
+    <link href="/css/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/top" class="logo">
+        <img src="/images/logo.jpg" alt="logo">
+        </a>
+        <h1>BLG選手名鑑</h1>
+        <!-- <ul>
+            <li>ようこそゲストさん</li>
+            <li><a href="/signup">ログイン</a></li>
+        </ul> -->
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>新規チーム登録</h2>
+            <p><a href="/download">こちら</a>よりフォーマットをダウンロードしてください。</p>
+            
+            <h4>↓こちらからCSVフォーマットをアップロードして下さい↓</h4>
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="csvfile" accept=".csv">
+                <button type="submit">アップロード</button>
+            </form>
+
+        </div>
+    </main>
+    
+</body>
+</html>

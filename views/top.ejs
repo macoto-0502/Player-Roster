@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>top</title>
+    <link href="/css/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/top" class="logo">
+        <img src="/images/logo.jpg" alt="logo">
+        </a>
+        <h1>BLG選手名鑑</h1>
+        <!-- <ul>
+            <li>ようこそゲストさん</li>
+            <li><a href="/signup">ログイン</a></li>
+        </ul> -->
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>登録チーム</h2>
+            
+            <% teams.forEach(team => { %>
+            <p><a href="/players/<%= team.id %>"><%= team.teamname %></a></p>
+            <% }) %>
+
+            <a href="/account"><input class="new_team" type="submit" value="新規チーム登録" href="/registration"></a>
+        </div>
+    </main>
+    
+</body>
+</html>

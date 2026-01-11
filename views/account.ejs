@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>アカウント作成</title>
+    <link href="/css/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/top" class="logo">
+        <img src="/images/logo.jpg" alt="logo">
+        </a>
+        <h1>BLG選手名鑑</h1>
+        <!---<ul>
+            <li>ようこそゲストさん</li>
+            <li><a href="#">ログイン</a></li>
+        </ul>--->
+    </header>
+
+    <main>
+        <div class="container">
+            <h2><%- h2 %></h2>
+            <p><a href="/download">こちら</a>よりCSVフォーマットをダウンロードしてください。</p>
+                <div class="accform">
+                    <form action = "/new_acc" method="post" enctype="multipart/form-data">
+                        <p>チームネーム</p>
+                        <p><input type="text" name="teamname"></p>
+                        <p>パスワード</p>
+                        <p><input type="password" name="password"></p>
+                        <h4>↓こちらからCSVフォーマットをアップロードして下さい↓</h4>
+                        <input type="file" name="csvfile" accept=".csv">
+                        <button type="submit">アップロード</button>
+                        <!---<div class="account"><p><button type="submit">アカウントを作成</button></p></div>--->
+                    </form>
+                </div>
+            
+            
+        </div>
+    </main>
+    
+</body>
+</html>

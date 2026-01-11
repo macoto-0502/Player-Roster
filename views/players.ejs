@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>players</title>
+    <link href="/css/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/top" class="logo">
+        <img src="/images/logo.jpg" alt="logo">
+        </a>
+        <h1>BLG選手名鑑</h1>
+        <!-- <ul>
+            <li>ようこそゲストさん</li>
+            <li><a href="/signup">ログイン</a></li>
+        </ul> -->
+    </header>
+
+    <main>
+        <div class="container">
+            <h2><%= teamname %></h2>
+            <table border="1" width="100%">
+                <tr>
+                    <th>背番号</th>
+                    <th>氏名</th>
+                    <th>身長(cm)</th>
+                    <th>体重(kg)</th>
+                    <th>ポジション</th>
+                    <th>生年月日</th>
+                    <th>出身地</th>
+                    <th><a href="/add/<%= teamId %>"><button>追加</button></a></th>
+                </tr>
+                <% players.forEach(player => { %>
+                    <tr>
+                        <th><%= player.jersey_number %></th>
+                        <th><%= player.name %></th>
+                        <th><%= player.height_cm %></th>
+                        <th><%= player.weight_kg %></th>
+                        <th><%= player.position %></th>
+                        <th>
+                            <% const d = new Date(player.birthdate); %>
+                            <%= d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() %>
+                        </th>
+                        <th><%= player.birthplace %></th>
+                        <th><a href="/edit/<%= player.id %>">
+                            <input type="submit" value="編集"></a>
+                        </th>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+    </main>
+    
+</body>
+</html>
