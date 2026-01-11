@@ -1,3 +1,24 @@
+require('dotenv').config(); // .env を読み込む
+const mysql = require('mysql2');
+
+console.log('DB_HOST:', process.env.DB_HOST);
+
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT, // Railwayではportも必要
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.error('DB接続エラー:', err);
+    return;
+  }
+  console.log('DB接続成功');
+});
+
 const express = require('express');
 const app = express();
 const multer = require('multer');
@@ -15,12 +36,12 @@ app.use(express.json());
 
 const upload = multer({ dest: 'uploads/' });    // アップロード先の設定（destは保存先の指定）
 
-const connection = mysql.createConnection({     // MySQL 接続
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'basketball'
-});
+// const connection = mysql.createConnection({     // MySQL 接続
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'basketball'
+// });
 
 app.post('/delete', (req, res) => {
     const { id, team_id } = req.body;
@@ -390,4 +411,10 @@ app.post('/new_acc', upload.single('csvfile'), (req, res) => {
 
 
 
-app.listen(3000);
+//app.listen(3000);
+
+//Render用にapp.listen(3000);を書き換え
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
