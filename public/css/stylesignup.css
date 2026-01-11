@@ -1,0 +1,58 @@
+body{
+    margin: 0px;
+    font-family: "HG丸ｺﾞｼｯｸM-PRO";
+}
+
+header {
+    height: 100px;
+    background-color: #DAE3F3;
+    text-align: center;
+
+}
+
+main{
+    background-color: #FAFAFF;
+    height: 1200px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+header h1 {
+    margin: 0;
+    color: gray;
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+.container{
+    padding: 50px;
+    text-align: center;
+    background-color: #DDF2FF;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 20px; 
+}
+
+.container input{
+    line-height: 30px;
+    border-radius: 10px;
+    border-width:1px;
+}
+
+.container h2{
+    padding-bottom: 50px;
+}
+
+.new_team{
+    margin-top: 20px;
+}
