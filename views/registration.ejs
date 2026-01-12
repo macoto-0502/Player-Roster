@@ -19,18 +19,24 @@
 
     <main>
         <div class="container">
-            <h2>新規チーム登録</h2>
-            <p><a href="/download">こちら</a>よりフォーマットをダウンロードしてください。</p>
-            
-            <h4>↓こちらからCSVフォーマットをアップロードして下さい↓</h4>
-
-            <form action="/upload" method="POST" enctype="multipart/form-data">
-                <input type="file" name="csvfile" accept=".csv">
-                <button type="submit">アップロード</button>
-            </form>
+            <h2><%- h2 %></h2>
+            <p><a href="/download">こちら</a>よりCSVフォーマットをダウンロードしてください。</p>
+                <div class="accform">
+                    <form action = "/new_acc" method="post" enctype="multipart/form-data">
+                        <p>チームネーム</p>
+                        <p><input type="text" name="teamname"></p>
+                        <p>パスワード</p>
+                        <p><input type="password" name="password"></p>
+                        <h4>↓こちらからCSVフォーマットをアップロードして下さい↓</h4>
+                        <input type="file" name="csvfile" accept=".csv">
+                        <button type="submit">アップロード</button>
+                        <!--<div class="account"><p><button type="submit">アカウントを作成</button></p></div>-->
+                    </form>
+                </div>
 
         </div>
     </main>
     
 </body>
+
 </html>
