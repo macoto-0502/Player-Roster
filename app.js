@@ -58,6 +58,10 @@ app.post('/delete', (req, res) => {
     );
 });
 
+app.get('/', (req, res) => {
+  res.redirect('/top');
+});
+
 app.get('/top', (req, res) => {
     connection.query(
         'SELECT * FROM teams',
@@ -416,4 +420,5 @@ app.post('/new_acc', upload.single('csvfile'), (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+
 });
