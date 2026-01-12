@@ -26,6 +26,15 @@ const csv = require('csv-parser');
 const iconv = require('iconv-lite');
 const fs = require('fs');
 
+const fs = require('fs');
+const path = require('path');
+
+// uploads フォルダがなければ作成
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
@@ -422,3 +431,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 
 });
+
