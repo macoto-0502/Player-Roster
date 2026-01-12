@@ -156,13 +156,13 @@ app.post('/add', (req, res) => {
 });
 
 
-app.get('/signup', (req, res) => {  //ログイン画面
-    res.render('signup');
-});
+// app.get('/signup', (req, res) => {  //ログイン画面
+//     res.render('signup');
+// });
 
-app.get('/registration', (req, res) => {
-    res.render('registration');
-});
+// app.get('/registration', (req, res) => {
+//     res.render('registration');
+// });
 
 app.get('/players', (req, res) => {
     res.render('players');
@@ -431,4 +431,5 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 
 });
+
 
