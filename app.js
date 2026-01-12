@@ -25,7 +25,6 @@ const multer = require('multer');
 const csv = require('csv-parser');
 const iconv = require('iconv-lite');
 const fs = require('fs');
-const mysql = require('mysql2');
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -418,3 +417,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
